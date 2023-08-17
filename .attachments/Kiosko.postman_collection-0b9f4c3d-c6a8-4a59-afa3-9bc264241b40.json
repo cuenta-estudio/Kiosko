@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "632b774f-29f5-4868-a7a4-d796e6301546",
+		"name": "Kiosko",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Reinyeccion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "totem-config",
+						"value": "{ \"idTerminal\":20,  \"tlogOperator\":245785356, \"canal\":1,  \"idOperatorDefault\":86,    \"idSucursal\":10076,    \"pos\":\"ec\",    \"codCanal\":\"POS\",    \"RubroId\":\"5\",    \"tipoDocumento\":\"39\",    \"caja\":12,    \"rutEmisorFolio\":\"82982300-0\",    \"phoneCode\":\"+56\",    \"productsType\":\"SP\" }",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"redisKey\":\"STORE_100762062\",\"transactionNumber\":\"62\"}"
+				},
+				"url": {
+					"raw": "https://app.abcdin.cl/api/tlog/generateXML",
+					"protocol": "https",
+					"host": [
+						"app",
+						"abcdin",
+						"cl"
+					],
+					"path": [
+						"api",
+						"tlog",
+						"generateXML"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Carga Campaña",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[  \r\n\r\n   {  \r\n\r\n      \"date_to\":\"28/02/2019\",\r\n\r\n      \"date_from\":\"13/03/2019\",\r\n\r\n      \"image\":\"https://s3.us-east-2.amazonaws.com/kioskopublic/28022019Kiosko/preventas10.jpg\",\r\n\r\n      \"name\":\"Market Place's\",\r\n\r\n      \"order\":999,\r\n\r\n      \"search\":{  \r\n\r\n         \"android\":\"https://play.google.com/store/apps/details?id=cl.abcdin.tarjetaabc&hl=es_CL\",\r\n\r\n         \"ios\":\"itms-apps://itunes.apple.com/cl/app/tarjeta-abcvisa/id1081522360?mt=8\"\r\n\r\n      },\r\n\r\n      \"type\":\"BUri\",\r\n\r\n      \"scope\":\"app\"\r\n\r\n   }\r\n\r\n]"
+				},
+				"url": {
+					"raw": "https://app.abcdin.cl/api/campaigns/create",
+					"protocol": "https",
+					"host": [
+						"app",
+						"abcdin",
+						"cl"
+					],
+					"path": [
+						"api",
+						"campaigns",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

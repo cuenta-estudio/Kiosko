@@ -1,0 +1,1 @@
+![Diagrama_secuencia_Kiosko.jpg](/.attachments/Diagrama_secuencia_Kiosko-ee6cfd68-d014-4409-b2aa-2eb3763c18d3.jpg)
